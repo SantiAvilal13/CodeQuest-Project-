@@ -20,5 +20,54 @@
     <div th:replace="~{fragmentos :: header}" class="Header"></div>
     <!-- Contenido del header -->
     <!-- Logo y nombre-->
+    <div id="mainContentSection">
+      <img th:src="@{/IMAGES/Logo.png}" alt="Logo" class="Logo" />
+      <h1 class="Nombre">Aprende a programar con CodeQuest</h1>
+      <p class="Descripcion">
+        Únete a nuestra plataforma y comienza tu viaje en el mundo de la programación. Aprende de
+        expertos y conoce el poder de la programación. ¡Descubre tu futuro tecnológico con
+        CodeQuest!
+      </p>
+    </div>
+
+    <div class="Card">
+      <img
+        th:src="@{/IMAGES/ProgramacionCodeQuest.png}"
+        alt="Imagen de Programacion"
+        class="ImagenCard"
+      />
+      <div class="ContenidoCard">
+        <h2 class="TituloCard">¿Por qué aprender a programar?</h2>
+        <h4 class="SubtituloCard">Beneficios de la programación</h4>
+        <p class="TextoCard">
+          <a href="#">
+            La programación es una habilidad esencial en el mundo digital actual. Te permite crear
+            soluciones innovadoras, automatizar tareas y desarrollar aplicaciones que pueden cambiar
+            el mundo. Además, aprender a programar mejora tus habilidades de resolución de problemas
+            y pensamiento lógico.
+          </a>
+        </p>
+      </div>
+    </div>
+    <!-- Tarjeta 2-->
+    <div class="Card">
+      <img
+        th:src="@{/IMAGES/ComunidadCodeQuest.png}"
+        alt="Imagen de Comunidad"
+        class="ImagenCard"
+      />
+      <div class="ContenidoCard">
+        <h2 class="TituloCard">Únete a nuestra comunidad</h2>
+        <h4 class="SubtituloCard">Aprende con otros entusiastas de la programación</h4>
+        <p class="TextoCard">
+          <a href="#">
+            En CodeQuest, no solo aprenderás a programar, sino que también formarás parte de una
+            comunidad vibrante de desarrolladores y entusiastas de la tecnología. Comparte tus
+            ideas, colabora en proyectos y crece junto a otros miembros apasionados por la
+            programación.
+          </a>
+        </p>
+      </div>
+    </div>
   </body>
 </html>
