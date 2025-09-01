@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CodeQuest Landing Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Puedes agregar aquí tus estilos CSS -->
+  </head>
+  <body>
+    <div th:fragment="header" class="Header">
+      <!-- Contenido del header -->
+      <!-- Logo y nombre-->
+
+      <div id="logoHeader">
+        <img src="/IMAGES/logo.png" alt="Logo" />
+        <h1>CodeQuest</h1>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a th:href="@{/}">Inicio</a></li>
+          <li><a th:href="@{/about}">Acerca de</a></li>
+          <li><a th:href="@{/contact}">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <button id="getCodeQuestBtn">Get CodeQuest</button>
+    </div>
+  </body>
+</html>

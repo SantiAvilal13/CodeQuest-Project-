@@ -1,0 +1,39 @@
+:root {
+  --background: #0b0d0f;
+  --foreground: #ffffff;
+
+  --border: #1a2633;
+  --input: #0d1012;
+
+  --primary: #ff5a00;
+  --primary-foreground: #ffffff;
+
+  --secondary: #1b242c;
+  --secondary-foreground: #cbd5e1;
+
+  --muted: #1e293b;
+  --muted-foreground: #94a3b8;
+
+  --success: #0f766e;
+  --success-foreground: #ffffff;
+
+  --accent: #f97316;
+  --accent-foreground: #ffffff;
+
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+
+  --warning: #facc15;
+  --warning-foreground: #000000;
+
+  --card: #0c0e10;
+  --card-foreground: #f8fafc;
+
+  --sidebar: #0f141a;
+  --sidebar-foreground: #e2e8f0;
+
+  --sidebar-primary: #1e2a38;
+  --sidebar-primary-foreground: #ff5a00;
+
+  --transition-speed: 0.3s;
+}

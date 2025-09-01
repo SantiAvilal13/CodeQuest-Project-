@@ -1,0 +1,26 @@
+@keyframes FadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Inter';
+  margin: 0;
+  padding: 0;
+  min-width: 100%;
+  min-height: 100%;
+  animation: FadeIn 0.8s ease-in-out;
+  transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+  background-color: var(--background);
+  color: var(--foreground);
+}

@@ -1,0 +1,84 @@
+@keyframes FadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.Header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background-color: none;
+  color: var(--foreground);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* separa extremos */
+  align-items: center;
+  padding: 1rem 2rem; /* un poco más de margen lateral */
+  border-bottom: 1px solid var(--border);
+  height: 110px;
+}
+
+.Header #logoHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start; /* logo a la izquierda */
+  gap: 0.5rem;
+}
+
+/* Contenedor para centrar nav + botón */
+.Header .center-content {
+  flex: 1;
+  display: flex;
+  justify-content: center; /* centra el nav + botón */
+  align-items: center;
+  gap: 2rem;
+}
+
+#logoHeader img {
+  width: 100px;
+  height: 80px;
+  object-fit: cover;
+}
+#logoHeader img:hover {
+  filter: invert(100%);
+  transition: all 0.3s ease-in-out;
+}
+.Header nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem;
+}
+.Header nav ul li a {
+  text-decoration: none;
+  color: var(--foreground);
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+.Header nav ul li a:hover {
+  color: var(--primary);
+}
+#getCodeQuestBtn {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+#getCodeQuestBtn:hover {
+  background-color: var(--accent);
+}
+#getCodeQuestBtn:active {
+  background-color: var(--primary-foreground);
+  transform: scale(0.9);
+}
