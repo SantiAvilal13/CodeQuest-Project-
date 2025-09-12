@@ -17,6 +17,7 @@
     <link rel="stylesheet" th:href="@{/STYLES/fragmentos.css}" />
     <link rel="stylesheet" th:href="@{/STYLES/colores.css}" />
     <link rel="stylesheet" th:href="@{/STYLES/botonPrincipal.css}" />
+    <link rel="stylesheet" th:href="@{/STYLES/seccionFinalLanding.css}" />
   </head>
   <body>
     <div th:replace="~{fragmentos :: header}" class="Header"></div>
@@ -30,7 +31,9 @@
         expertos y conoce el poder de la programación. ¡Descubre tu futuro tecnológico con
         CodeQuest!
       </p>
-      <button id="codeQuestBtn">Disfruta CodeQuest</button>
+      <form action="/contacto" method="get">
+        <button id="codeQuestBtn">Conoce CodeQuest</button>
+      </form>
     </div>
 
     <div class="Card">
@@ -94,10 +97,10 @@
 
         <div class="feature-card">
           <div class="feature-icon">👥</div>
-          <h3>Mentores Expertos</h3>
+          <h3>Asesoria Personalizada con IA</h3>
           <p>
-            Acceso directo a desarrolladores senior de la industria que te guiarán paso a paso en tu
-            camino hacia la maestría.
+            Asesoramiento personalizado con inteligencia artificial que te ayudarán a alcanzar tus
+            objetivos de aprendizaje.
           </p>
         </div>
 
@@ -143,18 +146,18 @@
     <section class="stats-section">
       <div class="stats-grid">
         <div class="stat-card">
-          <div class="stat-number">10K+</div>
-          <div class="stat-label">Estudiantes Activos</div>
+          <div class="stat-number">2K+</div>
+          <div class="stat-label">Interesados</div>
         </div>
 
         <div class="stat-card">
           <div class="stat-number">95%</div>
-          <div class="stat-label">Tasa de Éxito</div>
+          <div class="stat-label">Tasa de Retención</div>
         </div>
 
         <div class="stat-card">
-          <div class="stat-number">50+</div>
-          <div class="stat-label">Cursos Disponibles</div>
+          <div class="stat-number">10+</div>
+          <div class="stat-label">Cursos A Crear</div>
         </div>
 
         <div class="stat-card">
@@ -162,6 +165,103 @@
           <div class="stat-label">Soporte Disponible</div>
         </div>
       </div>
+    </section>
+
+    <!-- SECCIÓN DE INVITACIÓN CODEQUEST -->
+    <section class="invitation-section">
+      <div class="invitation-container">
+        <!-- Elementos decorativos flotantes -->
+        <div class="floating-shapes">
+          <div class="shape shape-1">💻</div>
+          <div class="shape shape-2">🚀</div>
+          <div class="shape shape-3">⚡</div>
+          <div class="shape shape-4">🎯</div>
+          <div class="shape shape-5">✨</div>
+          <div class="shape shape-6">🔥</div>
+        </div>
+
+        <!-- Contenido principal -->
+        <div class="invitation-content">
+          <div class="invitation-badge">
+            <span class="badge-text">🎉 ¡Oportunidad Única!</span>
+          </div>
+
+          <h2 class="invitation-title">
+            <span class="title-line">¿Listo para</span>
+            <span class="title-highlight">Transformar tu Futuro?</span>
+          </h2>
+
+          <p class="invitation-subtitle">
+            Únete a nuestra plataforma de aprendizaje en el mundo de la programación y descubre el
+            <strong>poder de la programación</strong>
+            que te permitirá dominar la tecnología con CodeQuest. ¡Tu momento es AHORA!
+          </p>
+          <!--
+          <div class="invitation-features">
+            <div class="feature-item">
+              <div class="feature-icon">🎓</div>
+              <span>Certificación Reconocida</span>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">👥</div>
+              <span>Comunidad Activa</span>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">💼</div>
+              <span>Bolsa de Trabajo</span>
+            </div>
+          </div>
+          -->
+
+          <div class="invitation-cta">
+            <form action="/contacto" method="get">
+              <button id="codeQuestBtn" class="particles">
+                <span class="btn-icon">🚀</span>
+                <span class="btn-text">¡Únete a CodeQuest GRATIS!</span>
+              </button>
+            </form>
+
+            <p class="cta-note">Sin compromisos • Cancela cuando quieras • Primer mes GRATIS</p>
+          </div>
+        </div>
+
+        <!-- Imagen decorativa -->
+        <div class="invitation-visual">
+          <div class="visual-circle"></div>
+          <div class="visual-code">
+            <div class="code-line"></div>
+            <div class="code-line"></div>
+            <div class="code-line"></div>
+            <div class="code-line"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contador de urgencia -->
+
+      <!--
+      <div class="urgency-timer">
+        <div class="timer-content">
+          <span class="timer-text">⏰ Oferta especial termina en:</span>
+          <div class="timer-display">
+            <div class="time-unit">
+              <span class="time-number" id="hours">23</span>
+              <span class="time-label">Horas</span>
+            </div>
+            <div class="time-separator">:</div>
+            <div class="time-unit">
+              <span class="time-number" id="minutes">45</span>
+              <span class="time-label">Minutos</span>
+            </div>
+            <div class="time-separator">:</div>
+            <div class="time-unit">
+              <span class="time-number" id="seconds">30</span>
+              <span class="time-label">Segundos</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      -->
     </section>
   </body>
   <script src="/SCRIPT/script.js"></script>

@@ -95,3 +95,203 @@ document.addEventListener('DOMContentLoaded', () => {
     statsObserver.observe(statsSection);
   }
 });
+
+// ---------------------------------------------------------------
+// ------------------- FUNCIONES AUXILIARES ---------------------
+
+// Contador de tiempo regresivo
+function startCountdown() {
+  const hoursEl = document.getElementById('hours');
+  const minutesEl = document.getElementById('minutes');
+  const secondsEl = document.getElementById('seconds');
+
+  let hours = 23;
+  let minutes = 45;
+  let seconds = 30;
+
+  const countdown = setInterval(() => {
+    seconds--;
+
+    if (seconds < 0) {
+      seconds = 59;
+      minutes--;
+    }
+
+    if (minutes < 0) {
+      minutes = 59;
+      hours--;
+    }
+
+    if (hours < 0) {
+      hours = 23;
+      minutes = 59;
+      seconds = 59;
+    }
+
+    //hoursEl.textContent = hours.toString().padStart(2, '0');
+    //minutesEl.textContent = minutes.toString().padStart(2, '0');
+    //secondsEl.textContent = seconds.toString().padStart(2, '0');
+  }, 1000);
+}
+
+// Iniciar countdown cuando se carga la página
+document.addEventListener('DOMContentLoaded', startCountdown);
+
+// Efecto de ripple en el botón
+document.getElementById('codeQuestBtn').addEventListener('click', function (e) {
+  const ripple = document.createElement('span');
+  ripple.classList.add('ripple');
+
+  const rect = this.getBoundingClientRect();
+  const size = Math.max(rect.width, rect.height);
+  const x = e.clientX - rect.left - size / 2;
+  const y = e.clientY - rect.top - size / 2;
+
+  ripple.style.width = ripple.style.height = size + 'px';
+  ripple.style.left = x + 'px';
+  ripple.style.top = y + 'px';
+
+  this.appendChild(ripple);
+
+  setTimeout(() => {
+    ripple.remove();
+  }, 600);
+});
+
+// ---------------------------------------------------------------
+// ------------------- CONTACTO ------------------
+
+// Animaciones de entrada para elementos
+document.addEventListener('DOMContentLoaded', function () {
+  // Crear más partículas dinámicamente
+  const particlesContainer = document.querySelector('.floating-particles');
+  for (let i = 0; i < 15; i++) {
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+    particle.style.left = Math.random() * 100 + '%';
+    particle.style.animationDelay = Math.random() * 20 + 's';
+    particle.style.animationDuration = Math.random() * 10 + 10 + 's';
+    particlesContainer.appendChild(particle);
+  }
+
+  // Manejar el envío del formulario
+  const form = document.getElementById('contactForm');
+  const submitButton = document.querySelector('.submit-button');
+  const successMessage = document.getElementById('successMessage');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    // Validar campos requeridos
+    const requiredFields = form.querySelectorAll('[required]');
+    let isValid = true;
+
+    requiredFields.forEach(field => {
+      if (!field.value.trim()) {
+        isValid = false;
+        field.style.borderColor = getComputedStyle(document.documentElement).getPropertyValue(
+          '--destructive'
+        );
+        field.focus();
+      } else {
+        field.style.borderColor = getComputedStyle(document.documentElement).getPropertyValue(
+          '--border'
+        );
+      }
+    });
+
+    if (!isValid) {
+      return;
+    }
+
+    // Simular carga
+    submitButton.classList.add('loading');
+    submitButton.querySelector('.button-text span:first-child').textContent = 'Enviando...';
+    submitButton.querySelector('.button-icon').textContent = '⏳';
+
+    // Simular envío (reemplazar con tu lógica real)
+    setTimeout(() => {
+      submitButton.classList.remove('loading');
+      submitButton.style.display = 'none';
+      successMessage.classList.add('show');
+
+      // Opcional: limpiar formulario
+      form.reset();
+
+      // Confetti effect (opcional)
+      createConfetti();
+    }, 2000);
+  });
+
+  // Efectos de focus mejorados
+  const inputs = document.querySelectorAll('.form-input, .form-select, .form-textarea');
+  inputs.forEach(input => {
+    input.addEventListener('focus', function () {
+      this.parentElement.querySelector('.form-label').style.color = getComputedStyle(
+        document.documentElement
+      )
+        .getPropertyValue('--primary')
+        .trim();
+    });
+
+    input.addEventListener('blur', function () {
+      this.parentElement.querySelector('.form-label').style.color = getComputedStyle(
+        document.documentElement
+      )
+        .getPropertyValue('--foreground')
+        .trim();
+    });
+
+    // Efecto de typing
+    input.addEventListener('input', function () {
+      if (this.value) {
+        this.style.transform = 'scale(1.02)';
+        setTimeout(() => {
+          this.style.transform = 'scale(1)';
+        }, 150);
+      }
+    });
+  });
+
+  // Efecto de confetti
+  function createConfetti() {
+    const colors = ['#ff5a00', '#f97316', '#facc15', '#10b981'];
+    const confettiCount = 50;
+
+    for (let i = 0; i < confettiCount; i++) {
+      const confetti = document.createElement('div');
+      confetti.style.position = 'fixed';
+      confetti.style.left = Math.random() * 100 + 'vw';
+      confetti.style.top = '-10px';
+      confetti.style.width = Math.random() * 8 + 4 + 'px';
+      confetti.style.height = confetti.style.width;
+      confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+      confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+      confetti.style.zIndex = '9999';
+      confetti.style.pointerEvents = 'none';
+      confetti.style.animation = `confettiFall ${Math.random() * 2 + 2}s linear forwards`;
+
+      document.body.appendChild(confetti);
+
+      setTimeout(() => {
+        confetti.remove();
+      }, 4000);
+    }
+  }
+
+  // Agregar keyframes para confetti
+  const style = document.createElement('style');
+  style.textContent = `
+            @keyframes confettiFall {
+                0% {
+                    transform: translateY(-100vh) rotate(0deg);
+                    opacity: 1;
+                }
+                100% {
+                    transform: translateY(100vh) rotate(720deg);
+                    opacity: 0;
+                }
+            }
+        `;
+  document.head.appendChild(style);
+});
