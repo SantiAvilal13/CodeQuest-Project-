@@ -1,0 +1,610 @@
+/* ===== VARIABLES CODEQUEST ===== */
+:root {
+  --background: #0b0d0f;
+  --foreground: #ffffff;
+  --border: #1a2633;
+  --input: #0d1012;
+  --primary: #ff5a00;
+  --primary-foreground: #ffffff;
+  --secondary: #1b242c;
+  --secondary-foreground: #cbd5e1;
+  --muted: #1e293b;
+  --muted-foreground: #94a3b8;
+  --success: #0f766e;
+  --success-foreground: #ffffff;
+  --accent: #f97316;
+  --accent-foreground: #ffffff;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --warning: #facc15;
+  --warning-foreground: #000000;
+  --card: #0c0e10;
+  --card-foreground: #f8fafc;
+  --sidebar: #0f141a;
+  --sidebar-foreground: #e2e8f0;
+  --sidebar-primary: #1e2a38;
+  --sidebar-primary-foreground: #ff5a00;
+  --transition-speed: 0.3s;
+}
+
+/* ===== RESET Y BASE ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--background);
+  color: var(--foreground);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ===== FONDO ANIMADO ===== */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 20% 80%, rgba(255, 90, 0, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(249, 115, 22, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(255, 90, 0, 0.1) 0%, transparent 50%);
+  animation: backgroundPulse 8s ease-in-out infinite;
+  z-index: -2;
+}
+
+@keyframes backgroundPulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* ===== PARTÍCULAS FLOTANTES ===== */
+.floating-particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--primary);
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: float 15s linear infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) translateX(0px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-100px) translateX(100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* ===== CONTAINER PRINCIPAL ===== */
+.contact-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  position: relative;
+}
+
+/* ===== CARD PRINCIPAL ===== */
+.contact-card {
+  background: linear-gradient(135deg, var(--card) 0%, var(--sidebar) 100%);
+  border: 1px solid var(--border);
+  border-radius: 25px;
+  padding: 60px 50px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 90, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+  animation: slideInUp 0.8s ease-out;
+}
+
+@keyframes slideInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.contact-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 90, 0, 0.03), transparent);
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* ===== HEADER ===== */
+.contact-header {
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.contact-logo {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  animation: logoFloat 4s ease-in-out infinite;
+}
+
+@keyframes logoFloat {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(5deg);
+  }
+}
+
+.contact-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+}
+
+.contact-subtitle {
+  font-size: 1.2rem;
+  color: var(--muted-foreground);
+  line-height: 1.6;
+}
+
+.contact-subtitle strong {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* ===== FORMULARIO ===== */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.form-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--foreground);
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  background: var(--input);
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 20px;
+  font-size: 1rem;
+  color: var(--foreground);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--muted-foreground);
+  opacity: 0.7;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(255, 90, 0, 0.1), 0 8px 25px rgba(255, 90, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.form-input:focus + .focus-ring,
+.form-select:focus + .focus-ring,
+.form-textarea:focus + .focus-ring {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.focus-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid var(--primary);
+  border-radius: 12px;
+  opacity: 0;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.form-textarea {
+  min-height: 120px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.form-select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23ff5a00' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 12px center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  padding-right: 45px;
+}
+
+.form-select option {
+  background: var(--card);
+  color: var(--foreground);
+  padding: 10px;
+}
+
+/* ===== CHECKBOX PERSONALIZADO ===== */
+.checkbox-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 10px 0;
+}
+
+.custom-checkbox {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+}
+
+.custom-checkbox input {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  margin: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background: var(--input);
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.custom-checkbox input:checked + .checkmark {
+  background: var(--primary);
+  border-color: var(--primary);
+  transform: scale(1.1);
+}
+
+.checkmark::after {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 6px;
+  height: 10px;
+  border: 2px solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg) scale(0);
+  transition: transform 0.2s ease;
+}
+
+.custom-checkbox input:checked + .checkmark::after {
+  transform: rotate(45deg) scale(1);
+}
+
+.checkbox-label {
+  font-size: 0.9rem;
+  color: var(--muted-foreground);
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.checkbox-label a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.checkbox-label a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* ===== BOTÓN SUBMIT ===== */
+.submit-button {
+  position: relative;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: var(--primary-foreground);
+  border: none;
+  border-radius: 50px;
+  padding: 18px 40px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  margin-top: 15px;
+  box-shadow: 0 8px 25px rgba(255, 90, 0, 0.3);
+  animation: buttonFloat 4s ease-in-out infinite;
+}
+
+@keyframes buttonFloat {
+  0%,
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-3px) scale(1.01);
+  }
+}
+
+.submit-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.submit-button:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 35px rgba(255, 90, 0, 0.4);
+  animation: pulse 1s ease-in-out infinite;
+}
+
+.submit-button:hover::before {
+  left: 100%;
+}
+
+.submit-button:active {
+  transform: translateY(-2px) scale(1.02);
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    box-shadow: 0 15px 35px rgba(255, 90, 0, 0.4);
+  }
+  50% {
+    box-shadow: 0 20px 45px rgba(255, 90, 0, 0.6);
+  }
+}
+
+.submit-button .button-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.submit-button:hover .button-text {
+  transform: scale(1.05);
+}
+
+.submit-button .button-icon {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.submit-button:hover .button-icon {
+  transform: translateX(5px);
+}
+
+/* ===== ESTADO DE CARGA ===== */
+.submit-button.loading {
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.submit-button.loading .button-icon {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== MENSAJE DE ÉXITO ===== */
+.success-message {
+  background: linear-gradient(135deg, var(--success), #10b981);
+  color: var(--success-foreground);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  font-weight: 600;
+  margin-top: 25px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+}
+
+.success-message.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.success-message .success-icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  animation: successBounce 0.8s ease-out;
+}
+
+@keyframes successBounce {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .contact-card {
+    padding: 40px 30px;
+    margin: 20px;
+    border-radius: 20px;
+  }
+
+  .contact-title {
+    font-size: 2rem;
+  }
+
+  .contact-logo {
+    font-size: 2.5rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .form-input,
+  .form-select,
+  .form-textarea {
+    padding: 14px 18px;
+  }
+
+  .submit-button {
+    padding: 16px 35px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-container {
+    padding: 20px 10px;
+  }
+
+  .contact-card {
+    padding: 30px 25px;
+  }
+
+  .contact-title {
+    font-size: 1.8rem;
+  }
+
+  .contact-subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+/* ===== ANIMACIONES DE ENTRADA ===== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.fade-in:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.fade-in:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.fade-in:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.fade-in:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.fade-in:nth-child(6) {
+  animation-delay: 0.6s;
+}

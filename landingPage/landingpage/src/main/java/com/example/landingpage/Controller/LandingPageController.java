@@ -12,4 +12,9 @@ public class LandingPageController {
     public String index() {
         return "index";
     }
+
+    @GetMapping("/contacto")
+    public String contacto() {
+        return "contacto";
+    }
 }
