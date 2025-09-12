@@ -1,0 +1,302 @@
+#codeQuestBtn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 20px 40px;
+  border: none;
+  border-radius: 50px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 1;
+  margin-top: 30px;
+
+  background: linear-gradient(135deg, #ff5a00 0%, #f97316 50%, #ff8c00 100%);
+  color: #ffffff;
+  box-shadow: 0 8px 25px rgba(255, 90, 0, 0.4);
+
+  /* Transiciones suaves */
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Animación base flotante */
+  animation: floatButton 3s ease-in-out infinite;
+}
+
+/* ===== ANIMACIONES DE KEYFRAMES ===== */
+
+@keyframes floatButton {
+  0%,
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.02);
+  }
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    box-shadow: 0 8px 25px rgba(255, 90, 0, 0.4), 0 0 0 0 rgba(255, 90, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 12px 35px rgba(255, 90, 0, 0.6), 0 0 20px 5px rgba(255, 90, 0, 0.2);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes backgroundShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes iconSpin {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    transform: rotate(90deg) scale(1.1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1);
+  }
+  75% {
+    transform: rotate(270deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+/* ===== EFECTOS ANTES Y DESPUÉS ===== */
+
+#codeQuestBtn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s ease;
+  z-index: -1;
+}
+
+#codeQuestBtn::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #ff5a00, #f97316, #ff8c00, #ffab00, #ff5a00);
+  background-size: 300% 300%;
+  border-radius: 50px;
+  z-index: -2;
+  opacity: 0;
+  animation: backgroundShift 3s ease infinite;
+  transition: opacity 0.3s ease;
+}
+
+/* ===== EFECTOS DE HOVER ===== */
+
+#codeQuestBtn:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(255, 90, 0, 0.5), 0 0 30px rgba(255, 90, 0, 0.3),
+    inset 0 2px 0 rgba(255, 255, 255, 0.2);
+
+  /* Gradiente más vibrante en hover */
+  background: linear-gradient(135deg, #ff6b1a 0%, #ff8c42 50%, #ffa726 100%);
+
+  /* Activar animaciones adicionales */
+  animation: floatButton 1.5s ease-in-out infinite, pulseGlow 2s ease-in-out infinite;
+}
+
+#codeQuestBtn:hover::before {
+  left: 100%;
+}
+
+#codeQuestBtn:hover::after {
+  opacity: 1;
+}
+
+/* ===== EFECTOS DE ACTIVE/CLICK ===== */
+
+#codeQuestBtn:active {
+  transform: translateY(-5px) scale(0.98);
+  transition: all 0.1s ease;
+}
+
+/* ===== ÍCONOS Y CONTENIDO INTERNO ===== */
+
+#codeQuestBtn .btn-icon {
+  display: inline-block;
+  font-size: 1.4rem;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+#codeQuestBtn:hover .btn-icon {
+  animation: iconSpin 1s ease-in-out;
+}
+
+#codeQuestBtn .btn-text {
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== EFECTO DE ONDAS AL CLICK ===== */
+
+#codeQuestBtn .ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  transform: scale(0);
+  animation: rippleEffect 0.6s linear;
+  pointer-events: none;
+}
+
+@keyframes rippleEffect {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* ===== ESTADOS DE FOCUS PARA ACCESIBILIDAD ===== */
+
+#codeQuestBtn:focus {
+  outline: none;
+  box-shadow: 0 8px 25px rgba(255, 90, 0, 0.4), 0 0 0 4px rgba(255, 90, 0, 0.3);
+}
+
+#codeQuestBtn:focus-visible {
+  box-shadow: 0 8px 25px rgba(255, 90, 0, 0.4), 0 0 0 4px rgba(255, 255, 255, 0.8);
+}
+
+/* ===== VERSIONES RESPONSIVAS ===== */
+
+@media (max-width: 768px) {
+  #codeQuestBtn {
+    font-size: 1.1rem;
+    padding: 16px 32px;
+  }
+
+  #codeQuestBtn .btn-icon {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #codeQuestBtn {
+    font-size: 1rem;
+    padding: 14px 28px;
+    gap: 8px;
+  }
+
+  #codeQuestBtn .btn-icon {
+    font-size: 1.1rem;
+  }
+}
+
+/* ===== VARIACIONES DE ESTADO ===== */
+
+#codeQuestBtn.loading {
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+#codeQuestBtn.loading .btn-icon {
+  animation: iconSpin 1s linear infinite;
+}
+
+#codeQuestBtn.success {
+  background: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%);
+  animation: pulseGlow 0.5s ease-in-out;
+}
+
+#codeQuestBtn.disabled {
+  opacity: 0.6;
+  pointer-events: none;
+  animation: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== EFECTOS DE PARTÍCULAS OPCIONALES ===== */
+
+#codeQuestBtn.particles::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: particleFloat 2s ease-in-out infinite;
+  box-shadow: 20px -10px 0 rgba(255, 255, 255, 0.6), -20px 10px 0 rgba(255, 255, 255, 0.4),
+    30px 15px 0 rgba(255, 255, 255, 0.5), -30px -15px 0 rgba(255, 255, 255, 0.3);
+}
+
+@keyframes particleFloat {
+  0%,
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+}
+
+/* ===== MODO OSCURO MEJORADO ===== */
+
+@media (prefers-color-scheme: dark) {
+  #codeQuestBtn {
+    box-shadow: 0 8px 25px rgba(255, 90, 0, 0.6);
+  }
+
+  #codeQuestBtn:hover {
+    box-shadow: 0 20px 40px rgba(255, 90, 0, 0.7), 0 0 30px rgba(255, 90, 0, 0.4);
+  }
+}
+
+/* ===== EFECTOS DE ENTRADA ===== */
+
+#codeQuestBtn.animate-in {
+  animation: slideInScale 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes slideInScale {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
