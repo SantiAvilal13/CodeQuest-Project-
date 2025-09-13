@@ -315,19 +315,26 @@ body::before {
 }
 
 .custom-checkbox {
-  position: relative;
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  margin-top: 2px;
-}
-
-.custom-checkbox input {
-  opacity: 0;
-  width: 100%;
-  height: 100%;
+  display: flex;
+  align-items: flex-start; /* Alinea check arriba del texto */
   cursor: pointer;
-  margin: 0;
+  width: 100%; /* Ocupa todo el ancho */
+  gap: 8px; /* Espacio entre el check y el texto */
+}
+.custom-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+/* El span del texto debe expandirse */
+.custom-checkbox .checkbox-label {
+  flex: 1;
+  display: block;
+  padding-left: 30px;
+  line-height: 1.4; /* Mejor lectura */
+  color: #fff; /* Ajusta según tu tema */
 }
 
 .checkmark {
@@ -607,4 +614,76 @@ body::before {
 }
 .fade-in:nth-child(6) {
   animation-delay: 0.6s;
+}
+/* ===== MENSAJE CONFIRMACION DE ENVIO ===== */
+/* Fondo oscuro */
+.modal {
+  display: none; /* Oculto por defecto */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+/* Contenedor del contenido */
+.modal-content {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 2rem;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  position: relative;
+  animation: scaleIn 0.5s ease forwards;
+  box-shadow: 0 8px 30px rgba(255, 140, 0, 0.6);
+}
+
+/* Icono grande */
+.modal-content .icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: bounce 1s infinite;
+}
+
+/* Botón cerrar */
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #ff7a18;
+  transition: transform 0.2s;
+}
+.close-btn:hover {
+  transform: scale(1.2);
+}
+
+/* Animaciones */
+@keyframes scaleIn {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
 }

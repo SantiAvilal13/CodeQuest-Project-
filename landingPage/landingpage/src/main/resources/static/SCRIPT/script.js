@@ -175,10 +175,11 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Manejar el envío del formulario
-  const form = document.getElementById('contactForm');
-  const submitButton = document.querySelector('.submit-button');
-  const successMessage = document.getElementById('successMessage');
+  //const form = document.getElementById('contactForm');
+  //const submitButton = document.querySelector('.submit-button');
+  //const successMessage = document.getElementById('successMessage');
 
+  /*
   form.addEventListener('submit', function (e) {
     e.preventDefault();
 
@@ -223,6 +224,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 2000);
   });
 
+  */
   // Efectos de focus mejorados
   const inputs = document.querySelectorAll('.form-input, .form-select, .form-textarea');
   inputs.forEach(input => {
@@ -295,3 +297,37 @@ document.addEventListener('DOMContentLoaded', function () {
         `;
   document.head.appendChild(style);
 });
+
+// MOSTRAR MENSAJE DE CONFIRMACION}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('successModal');
+  if (modal) {
+    modal.style.display = 'flex'; // Lo muestra automáticamente
+
+    const closeBtn = modal.querySelector('.close-btn');
+
+    closeBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', e => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+  }
+});
+
+function mostrarModal() {
+  const modal = document.getElementById('successModal');
+  modal.style.display = 'flex';
+  modal.classList.add('fade-in'); // animación
+
+  const closeBtn = modal.querySelector('.close-btn');
+  closeBtn.addEventListener('click', () => (modal.style.display = 'none'));
+
+  window.addEventListener('click', e => {
+    if (e.target === modal) modal.style.display = 'none';
+  });
+}

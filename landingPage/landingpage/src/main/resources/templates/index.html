@@ -27,9 +27,9 @@
       <img th:src="@{/IMAGES/Logo.png}" alt="Logo" class="Logo" />
       <h1 class="Nombre">Aprende a programar con CodeQuest</h1>
       <p class="Descripcion">
-        Únete a nuestra plataforma y comienza tu viaje en el mundo de la programación. Aprende de
-        expertos y conoce el poder de la programación. ¡Descubre tu futuro tecnológico con
-        CodeQuest!
+        Únete a nuestra plataforma y comienza tu viaje en el mundo de la programación.
+        <br />
+        ¡Descubre tu futuro tecnológico con CodeQuest!
       </p>
       <form action="/contacto" method="get">
         <button id="codeQuestBtn">Conoce CodeQuest</button>
@@ -264,5 +264,5 @@
       -->
     </section>
   </body>
-  <script src="/SCRIPT/script.js"></script>
+  <script th:src="@{/SCRIPT/script.js}"></script>
 </html>

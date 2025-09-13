@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -48,14 +48,20 @@
         </div>
 
         <!-- Formulario -->
-        <form class="contact-form" id="contactForm">
+        <form
+          class="contact-form"
+          id="contactForm"
+          th:action="@{/contacto}"
+          th:object="${contactoForm}"
+          method="post"
+        >
           <div class="form-row fade-in">
             <div class="form-group">
-              <label class="form-label" for="firstName">Nombre *</label>
+              <label class="form-label" for="nombre">Nombre *</label>
               <input
                 type="text"
-                id="firstName"
-                name="firstName"
+                id="nombre"
+                name="nombre"
                 class="form-input"
                 placeholder="Tu nombre"
                 required
@@ -64,11 +70,11 @@
             </div>
 
             <div class="form-group">
-              <label class="form-label" for="lastName">Apellido *</label>
+              <label class="form-label" for="apellido">Apellido *</label>
               <input
                 type="text"
-                id="lastName"
-                name="lastName"
+                id="apellido"
+                name="apellido"
                 class="form-input"
                 placeholder="Tu apellido"
                 required
@@ -78,11 +84,11 @@
           </div>
 
           <div class="form-group fade-in">
-            <label class="form-label" for="email">Correo Electrónico *</label>
+            <label class="form-label" for="correo">Correo Electrónico *</label>
             <input
               type="email"
-              id="email"
-              name="email"
+              id="correo"
+              name="correo"
               class="form-input"
               placeholder="tu@email.com"
               required
@@ -91,11 +97,11 @@
           </div>
 
           <div class="form-group fade-in">
-            <label class="form-label" for="phone">Teléfono (Opcional)</label>
+            <label class="form-label" for="telefono">Teléfono (Opcional)</label>
             <input
               type="tel"
-              id="phone"
-              name="phone"
+              id="telefono"
+              name="telefono"
               class="form-input"
               placeholder="+57 300 123 4567"
             />
@@ -103,8 +109,8 @@
           </div>
 
           <div class="form-group fade-in">
-            <label class="form-label" for="interest">¿Qué te interesa más?</label>
-            <select id="interest" name="interest" class="form-select" required>
+            <label class="form-label" for="interes">¿Qué te interesa más?</label>
+            <select id="interes" name="interes" class="form-select" required>
               <option value="">Selecciona una opción</option>
               <option value="frontend">Desarrollo Frontend</option>
               <option value="backend">Desarrollo Backend</option>
@@ -118,8 +124,8 @@
           </div>
 
           <div class="form-group fade-in">
-            <label class="form-label" for="experience">Nivel de Experiencia</label>
-            <select id="experience" name="experience" class="form-select">
+            <label class="form-label" for="experiencia">Nivel de Experiencia</label>
+            <select id="experiencia" name="experiencia" class="form-select">
               <option value="">Selecciona tu nivel</option>
               <option value="beginner">Principiante (Sin experiencia)</option>
               <option value="basic">Básico (Menos de 1 año)</option>
@@ -130,10 +136,10 @@
           </div>
 
           <div class="form-group fade-in">
-            <label class="form-label" for="message">Mensaje Adicional (Opcional)</label>
+            <label class="form-label" for="mensaje">Mensaje Adicional (Opcional)</label>
             <textarea
-              id="message"
-              name="message"
+              id="mensaje"
+              name="mensaje"
               class="form-textarea"
               placeholder="Cuéntanos qué te gustaría aprender o cualquier pregunta que tengas..."
             ></textarea>
@@ -141,30 +147,31 @@
           </div>
 
           <div class="checkbox-group fade-in">
-            <div class="custom-checkbox">
-              <input type="checkbox" id="newsletter" name="newsletter" checked />
+            <label class="custom-checkbox">
+              <input type="checkbox" id="notificaciones" name="notificaciones" />
               <span class="checkmark"></span>
-            </div>
-            <label class="checkbox-label" for="newsletter">
-              Quiero recibir actualizaciones, noticias y ofertas especiales de CodeQuest por email.
+              <span class="checkbox-label">
+                Quiero recibir actualizaciones, noticias y ofertas especiales de CodeQuest por
+                email.
+              </span>
             </label>
           </div>
 
           <div class="checkbox-group fade-in">
-            <div class="custom-checkbox">
+            <label class="custom-checkbox">
               <input type="checkbox" id="terms" name="terms" required />
               <span class="checkmark"></span>
-            </div>
-            <label class="checkbox-label" for="terms">
-              Acepto los
-              <a href="#" target="_blank">términos y condiciones</a>
-              y la
-              <a href="#" target="_blank">política de privacidad</a>
-              *
+              <span class="checkbox-label">
+                Acepto los
+                <a href="#" target="_blank">términos y condiciones</a>
+                y la
+                <a href="#" target="_blank">política de privacidad</a>
+                *
+              </span>
             </label>
           </div>
 
-          <button id="codeQuestBtn">Disfruta CodeQuest</button>
+          <button id="codeQuestBtn" type="submit">Disfruta CodeQuest</button>
 
           <div class="success-message" id="successMessage">
             <div class="success-icon">🎉</div>
@@ -176,6 +183,48 @@
         </form>
       </div>
     </div>
-    <script th:src="@{/SCRIPT/script.js}"></script>
+    <!-- Modal de confirmación -->
+    <!-- ===== MODAL MENSAJE CONFIRMACIÓN ===== -->
+    <div id="modalExito" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="cerrarModal()">&times;</span>
+        <div class="icon">✅</div>
+        <h2>¡Datos enviados con éxito!</h2>
+        <p>
+          Gracias por contactarnos. A partir de ahora recibirás todas las novedades y avances en tu
+          correo electrónico 📩
+        </p>
+      </div>
+    </div>
+
+    <script>
+      function mostrarModalExito() {
+        const modal = document.getElementById('modalExito');
+        modal.style.display = 'flex';
+      }
+
+      function cerrarModal() {
+        const modal = document.getElementById('modalExito');
+        modal.style.display = 'none';
+      }
+
+      // Cerrar al hacer clic fuera del contenido
+      window.onclick = function (event) {
+        const modal = document.getElementById('modalExito');
+        if (event.target === modal) {
+          modal.style.display = 'none';
+        }
+      };
+    </script>
+
+    <!-- Script de activación condicionado -->
+    <div th:if="${modalExito}">
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          mostrarModalExito();
+        });
+      </script>
+    </div>
   </body>
+  <script th:src="@{/SCRIPT/script.js}"></script>
 </html>
