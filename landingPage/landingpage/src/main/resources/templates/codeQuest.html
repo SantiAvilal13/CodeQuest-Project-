@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nuestra Solución - CodeQuest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" th:href="@{/STYLES/fragmentos.css}" />
+    <link rel="stylesheet" th:href="@{/STYLES/colores.css}" />
+    <link rel="stylesheet" th:href="@{/STYLES/botonPrincipal.css}" />
+    <link rel="stylesheet" th:href="@{/STYLES/codeQuest.css}" />
+  </head>
+  <body>
+    <div th:replace="~{fragmentos :: header}"></div>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <div class="hero-background"></div>
+
+      <div class="floating-elements">
+        <div class="floating-element" style="left: 10%; top: 20%">🎮</div>
+        <div class="floating-element" style="left: 85%; top: 15%">🏆</div>
+        <div class="floating-element" style="left: 60%; top: 70%">⚡</div>
+        <div class="floating-element" style="left: 25%; top: 80%">🔥</div>
+        <div class="floating-element" style="left: 70%; top: 30%">💎</div>
+        <div class="floating-element" style="left: 15%; top: 60%">🚀</div>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-badge">🎯 La Solución Definitiva</div>
+        <h1 class="hero-title">Transformamos Aprendizaje en Empleo Real</h1>
+        <p class="hero-subtitle">
+          Una plataforma integral que combina gamificación, IA y metodologías visuales para crear
+          desarrolladores altamente empleables desde cero
+        </p>
+        <div class="hero-cta">
+          <button class="hero-btn">
+            <span>🚀</span>
+            Descubre Cómo Funciona
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- UVP SECTION -->
+    <section class="uvp-section">
+      <div class="uvp-container fade-in">
+        <h2 class="section-title">Nuestra Propuesta de Valor</h2>
+        <p class="uvp-quote">
+          "Aprende, demuestra y consigue trabajo: una sola plataforma que transforma el conocimiento
+          en candidaturas válidas y perfiles laborales competitivos"
+        </p>
+        <p class="uvp-description">
+          CodeQuest no es solo otra plataforma de programación. Somos la primera solución integral
+          que combina aprendizaje adaptativo con herramientas reales de empleabilidad, utilizando IA
+          para personalizar tu experiencia y gamificación para mantener tu motivación al máximo.
+        </p>
+
+        <div class="uvp-features">
+          <div class="uvp-feature">
+            <div class="feature-icon">🎯</div>
+            <h3 class="feature-title">Aprendizaje Adaptativo</h3>
+            <p class="feature-description">
+              IA que personaliza rutas, genera ejercicios únicos y proporciona feedback contextual
+              según tu progreso y estilo de aprendizaje.
+            </p>
+          </div>
+
+          <div class="uvp-feature">
+            <div class="feature-icon">🏆</div>
+            <h3 class="feature-title">Gamificación Integral</h3>
+            <p class="feature-description">
+              Sistema de niveles, badges verificables y recompensas que transforman el aprendizaje
+              en una experiencia adictiva y medible.
+            </p>
+          </div>
+
+          <div class="uvp-feature">
+            <div class="feature-icon">💼</div>
+            <h3 class="feature-title">Empleabilidad Real</h3>
+            <p class="feature-description">
+              Simulador de entrevistas con IA, optimización automática de CV y conexión directa con
+              empleadores que buscan tu perfil.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GAMIFICATION SECTION -->
+    <section class="gamification-section">
+      <div class="gamification-header fade-in">
+        <h2 class="section-title">CodeQuest Journey: El Poder de la Gamificación</h2>
+        <p
+          style="
+            font-size: 1.3rem;
+            color: var(--muted-foreground);
+            max-width: 800px;
+            margin: 0 auto;
+          "
+        >
+          Las rachas son nuestro motor principal. Cada día que programas, cada problema que
+          resuelves, cada entrevista que practicas suma a tu streak y te acerca más al empleo de tus
+          sueños.
+        </p>
+      </div>
+
+      <div class="gamification-grid">
+        <div class="gamification-card fade-in">
+          <div class="card-content">
+            <div class="card-icon">🎮</div>
+            <h3 class="card-title">Sistema de Niveles</h3>
+            <p class="card-description">
+              Progresa desde Code Apprentice hasta Code Master. Cada nivel desbloquea nuevas
+              funcionalidades y oportunidades laborales.
+            </p>
+            <ul class="card-features">
+              <li>5 niveles profesionales distintos</li>
+              <li>Desbloqueo progresivo de herramientas</li>
+              <li>Reconocimiento visual del progreso</li>
+              <li>Acceso premium por nivel alcanzado</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="gamification-card fade-in">
+          <div class="card-content">
+            <div class="card-icon">🔥</div>
+            <h3 class="card-title">Streaks y XP</h3>
+            <p class="card-description">
+              Las rachas diarias son tu superpoder. Mantén tu streak para multiplicar XP,
+              desbloquear bonuses y demostrar consistencia a empleadores.
+            </p>
+            <ul class="card-features">
+              <li>Streak multipliers hasta x10 XP</li>
+              <li>Bonus especiales por 100+ días</li>
+              <li>Streak recovery con CodeCoins</li>
+              <li>Leaderboards de consistencia</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="gamification-card fade-in">
+          <div class="card-content">
+            <div class="card-icon">🏅</div>
+            <h3 class="card-title">Badges Verificables</h3>
+            <p class="card-description">
+              Micro-certificaciones blockchain que puedes exportar a LinkedIn, GitHub y tu CV. Cada
+              badge representa skills reales validados.
+            </p>
+            <ul class="card-features">
+              <li>Exportación a LinkedIn y GitHub</li>
+              <li>Verificación blockchain</li>
+              <li>Métricas específicas por badge</li>
+              <li>Reconocimiento por empleadores</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="gamification-card fade-in">
+          <div class="card-content">
+            <div class="card-icon">💰</div>
+            <h3 class="card-title">CodeCoins</h3>
+            <p class="card-description">
+              Moneda virtual que ganas completando desafíos y manteniendo streaks. Úsalas para
+              desbloquear contenido premium y herramientas avanzadas.
+            </p>
+            <ul class="card-features">
+              <li>Gana 1000+ CodeCoins por empleo conseguido</li>
+              <li>Desbloquea plantillas premium de CV</li>
+              <li>Acceso a mentorías personalizadas</li>
+              <li>Exposición destacada a empleadores</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="gamification-card fade-in">
+          <div class="card-content">
+            <div class="card-icon">🏆</div>
+            <h3 class="card-title">Competencias y Torneos</h3>
+            <p class="card-description">
+              Participa en hackathons virtuales, coding sprints y competencias que te conectan
+              directamente con empresas que buscan talento como el tuyo.
+            </p>
+            <ul class="card-features">
+              <li>Hackathons con empresas patrocinadoras</li>
+              <li>Prizes reales y oportunidades de trabajo</li>
+              <li>Networking con otros desarrolladores</li>
+              <li>Reconocimiento público de habilidades</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="gamification-card fade-in">
+          <div class="card-content">
+            <div class="card-icon">📊</div>
+            <h3 class="card-title">Match Score</h3>
+            <p class="card-description">
+              Sistema de IA que analiza tu perfil y lo compara con ofertas laborales reales,
+              mostrándote exactamente qué tan compatible eres con cada oportunidad.
+            </p>
+            <ul class="card-features">
+              <li>Análisis en tiempo real vs ofertas</li>
+              <li>Recomendaciones personalizadas</li>
+              <li>Tracking de mejoras en compatibilidad</li>
+              <li>Alertas de oportunidades ideales</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- METHODOLOGY SECTION -->
+    <section class="methodology-section">
+      <div class="methodology-container">
+        <div class="methodology-intro fade-in">
+          <h2>Metodología Visual y Práctica</h2>
+          <p>
+            CodeQuest revoluciona la enseñanza de programación con enfoques únicos que van más allá
+            del código tradicional. Combinamos explicaciones visuales, videos generados por IA,
+            diagramas interactivos y experiencias hands-on para crear un aprendizaje que realmente
+            se queda en tu memoria.
+          </p>
+        </div>
+
+        <div class="methodology-grid">
+          <div class="methodology-item fade-in">
+            <div class="methodology-icon">🎬</div>
+            <h3>Videos IA + Expertos</h3>
+            <p>
+              Contenido audiovisual generado por IA y validado por expertos en tecnología, creando
+              explicaciones únicas y personalizadas para cada concepto.
+            </p>
+          </div>
+
+          <div class="methodology-item fade-in">
+            <div class="methodology-icon">🧠</div>
+            <h3>Mapas Mentales Interactivos</h3>
+            <p>
+              Diagramas visuales que conectan conceptos y refuerzan redes semánticas para mejorar la
+              memorización y comprensión a largo plazo.
+            </p>
+          </div>
+
+          <div class="methodology-item fade-in">
+            <div class="methodology-icon">🎨</div>
+            <h3>Diagramas y Visualizaciones</h3>
+            <p>
+              Representaciones gráficas complejas que simplifican algoritmos, estructuras de datos y
+              patrones de diseño de manera intuitiva.
+            </p>
+          </div>
+
+          <div class="methodology-item fade-in">
+            <div class="methodology-icon">🤖</div>
+            <h3>Explicaciones con IA</h3>
+            <p>
+              Asistente IA que adapta explicaciones a tu nivel, estilo de aprendizaje y contexto
+              específico, disponible 24/7 para resolver dudas.
+            </p>
+          </div>
+
+          <div class="methodology-item fade-in">
+            <div class="methodology-icon">⚡</div>
+            <h3>Práctica Inmediata</h3>
+            <p>
+              Editor de código integrado que te permite practicar conceptos inmediatamente después
+              de aprenderlos, sin configuraciones complejas.
+            </p>
+          </div>
+
+          <div class="methodology-item fade-in">
+            <div class="methodology-icon">🏗️</div>
+            <h3>Proyectos Progresivos</h3>
+            <p>
+              Construye aplicaciones reales desde el primer día, con complejidad incremental que
+              forma tu portafolio profesional.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JOURNEY SECTION -->
+    <section class="journey-section">
+      <div class="journey-container fade-in">
+        <h2 class="journey-title">Tu Viaje hacia el Empleo</h2>
+
+        <div class="journey-path">
+          <div class="journey-step">
+            <div class="step-number">1</div>
+            <div class="step-icon">🎯</div>
+            <h3 class="step-title">Code Apprentice</h3>
+            <p class="step-description">Fundamentos visuales y práctica gamificada</p>
+          </div>
+
+          <div class="journey-step">
+            <div class="step-number">2</div>
+            <div class="step-icon">🧭</div>
+            <h3 class="step-title">Code Explorer</h3>
+            <p class="step-description">Proyectos reales y especialización técnica</p>
+          </div>
+
+          <div class="journey-step">
+            <div class="step-number">3</div>
+            <h3 class="step-title">Code Builder</h3>
+            <div class="step-icon">🛠️</div>
+            <p class="step-description">Portafolio profesional y preparación laboral</p>
+          </div>
+
+          <div class="journey-step">
+            <div class="step-number">4</div>
+            <div class="step-icon">🎭</div>
+            <h3 class="step-title">Code Craftsman</h3>
+            <p class="step-description">Entrevistas simuladas y optimización de CV</p>
+          </div>
+
+          <div class="journey-step">
+            <div class="step-number">5</div>
+            <div class="step-icon">👑</div>
+            <h3 class="step-title">Code Master</h3>
+            <p class="step-description">Conexión con empleadores y colocación laboral</p>
+          </div>
+        </div>
+
+        <div style="margin-top: 40px">
+          <h3 style="font-size: 1.8rem; color: var(--primary); margin-bottom: 20px">
+            🔥 Las Rachas: Tu Motor Principal
+          </h3>
+          <p
+            style="
+              font-size: 1.2rem;
+              color: var(--muted-foreground);
+              max-width: 700px;
+              margin: 0 auto;
+              line-height: 1.6;
+            "
+          >
+            Cada día consecutivo que programas multiplica tu XP, desbloquea contenido exclusivo y
+            demuestra a empleadores tu dedicación y consistencia. Las rachas de 100+ días se
+            convierten en certificaciones verificables de disciplina profesional.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAIN RELIEVERS SECTION -->
+    <section
+      class="uvp-section"
+      style="background: linear-gradient(135deg, var(--sidebar) 0%, var(--background) 100%)"
+    >
+      <div class="uvp-container fade-in">
+        <h2 class="section-title">Cómo Resolvemos tus Problemas Reales</h2>
+        <p class="uvp-description">
+          Identificamos los obstáculos más comunes en el aprendizaje de programación y la búsqueda
+          de empleo, y construimos soluciones específicas para cada uno de ellos.
+        </p>
+
+        <div class="uvp-features">
+          <div class="uvp-feature">
+            <div class="feature-icon">😰</div>
+            <h3 class="feature-title">Ansiedad en Entrevistas</h3>
+            <p class="feature-description">
+              Simulador de entrevistas con análisis vocal y textual que te prepara para situaciones
+              reales, reduciendo ansiedad y mejorando tu performance.
+            </p>
+          </div>
+
+          <div class="uvp-feature">
+            <div class="feature-icon">📚</div>
+            <h3 class="feature-title">Baja Retención</h3>
+            <p class="feature-description">
+              Gamificación y personalización por IA que mantiene tu motivación alta, con ejercicios
+              adaptativos que evitan frustración y aburrimiento.
+            </p>
+          </div>
+
+          <div class="uvp-feature">
+            <div class="feature-icon">🎯</div>
+            <h3 class="feature-title">Falta de Práctica Real</h3>
+            <p class="feature-description">
+              Proyectos contextualizado que simulan entornos de trabajo reales, con feedback
+              inmediato y medición objetiva del progreso.
+            </p>
+          </div>
+
+          <div class="uvp-feature">
+            <div class="feature-icon">📄</div>
+            <h3 class="feature-title">CV Poco Atractivo</h3>
+            <p class="feature-description">
+              Conversión automática de logros de la plataforma en métricas cuantificables que
+              impresionan reclutadores y sistemas ATS.
+            </p>
+          </div>
+
+          <div class="uvp-feature">
+            <div class="feature-icon">🔍</div>
+            <h3 class="feature-title">Desconexión del Mercado</h3>
+            <p class="feature-description">
+              Scraping de ofertas laborales reales para alinear tu aprendizaje con demandas actuales
+              del mercado tecnológico.
+            </p>
+          </div>
+
+          <div class="uvp-feature">
+            <div class="feature-icon">⏰</div>
+            <h3 class="feature-title">Tiempo hasta Empleo</h3>
+            <p class="feature-description">
+              Conexión directa con empleadores que buscan perfiles validados, reduciendo
+              significativamente el tiempo de búsqueda laboral.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="final-cta fade-in">
+      <div style="max-width: 800px; margin: 0 auto">
+        <h2>¿Listo para Transformar tu Futuro?</h2>
+        <p>
+          Únete a CodeQuest y conviértete en el desarrollador que las empresas buscan. Con nuestra
+          metodología probada, gamificación adictiva y herramientas de empleabilidad reales, tu
+          próximo trabajo está a solo un streak de distancia.
+        </p>
+        <button class="final-btn">
+          <span>🚀</span>
+          Comienza tu CodeQuest Journey
+        </button>
+      </div>
+    </section>
+
+    <div th:replace="~{fragmentos :: footer}"></div>
+  </body>
+  <script th:src="@{/SCRIPT/codeQuest.js}"></script>
+</html>

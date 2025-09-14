@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nosotros - CodeQuest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" th:href="@{/STYLES/index.css}" />
+    <link rel="stylesheet" th:href="@{/STYLES/fragmentos.css}" />
+    <link rel="stylesheet" th:href="@{/STYLES/colores.css}" />
+    <link rel="stylesheet" th:href="@{/STYLES/botonPrincipal.css}" />
+    <link rel="stylesheet" th:href="@{/STYLES/nosotros.css}" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <div th:replace="~{fragmentos :: header}" class="Header"></div>
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <div class="hero-background"></div>
+
+      <div class="floating-elements">
+        <div class="floating-element" style="left: 10%; top: 20%">💻</div>
+        <div class="floating-element" style="left: 85%; top: 15%">🚀</div>
+        <div class="floating-element" style="left: 60%; top: 70%">⚡</div>
+        <div class="floating-element" style="left: 25%; top: 80%">✨</div>
+        <div class="floating-element" style="left: 70%; top: 30%">🎯</div>
+        <div class="floating-element" style="left: 15%; top: 60%">🔥</div>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-badge">🌟 Conoce al Equipo CodeQuest</div>
+        <h1 class="hero-title">Somos CodeQuest</h1>
+        <p class="hero-subtitle">
+          Un equipo apasionado de 5 desarrolladores dedicados a transformar vidas a través de la
+          programación. Conoce las mentes creativas detrás de la plataforma que está revolucionando
+          la educación tecnológica.
+        </p>
+      </div>
+    </section>
+
+    <!-- TEAM SECTION -->
+    <!-- TEAM SECTION -->
+    <section class="team-section">
+      <div class="team-container">
+        <div class="section-header fade-in">
+          <h2 class="section-title">Nuestro Equipo</h2>
+          <p class="section-description">
+            Cinco líderes con visión estratégica y experiencia técnica, unidos por la pasión de
+            transformar la educación en programación
+          </p>
+        </div>
+
+        <div class="team-grid">
+          <div class="team-member fade-in">
+            <div class="member-content">
+              <div class="member-avatar">👨‍💼</div>
+              <h3 class="member-name">Santiago Castro Garzón</h3>
+              <p class="member-role">CEO / Director Ejecutivo</p>
+              <p class="member-description">
+                Lidera la visión estratégica de CodeQuest, encargado de la toma de decisiones clave
+                y la gestión general de la organización. Su enfoque se centra en el crecimiento
+                sostenible y la innovación educativa.
+              </p>
+              <div class="member-skills">
+                <span class="skill-tag">Liderazgo</span>
+                <span class="skill-tag">Planificación Estratégica</span>
+                <span class="skill-tag">Comunicación</span>
+                <span class="skill-tag">Gestión</span>
+              </div>
+              <div class="member-social">
+                <a href="mailto:sa-castro@javeriana.edu.co" class="social-link">✉️</a>
+                <a href="#" class="social-link">💼</a>
+                <a href="#" class="social-link">🐦</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-member fade-in">
+            <div class="member-content">
+              <div class="member-avatar">👨‍💻</div>
+              <h3 class="member-name">Santiago Ávila</h3>
+              <p class="member-role">CTO / Director de Tecnología</p>
+              <p class="member-description">
+                Responsable del desarrollo de productos y la infraestructura técnica de CodeQuest.
+                Define la arquitectura tecnológica y supervisa la implementación de soluciones
+                innovadoras.
+              </p>
+              <div class="member-skills">
+                <span class="skill-tag">Programación</span>
+                <span class="skill-tag">Arquitectura de Sistemas</span>
+                <span class="skill-tag">Gestión Técnica</span>
+                <span class="skill-tag">DevOps</span>
+              </div>
+              <div class="member-social">
+                <a href="#" class="social-link">🐙</a>
+                <a href="#" class="social-link">💼</a>
+                <a href="#" class="social-link">⚡</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-member fade-in">
+            <div class="member-content">
+              <div class="member-avatar">👨‍🎨</div>
+              <h3 class="member-name">José Eduardo Valeriano Castiblanco</h3>
+              <p class="member-role">CMO / Director de Marketing</p>
+              <p class="member-description">
+                Desarrolla la estrategia de marca y lidera los esfuerzos de adquisición de clientes.
+                Su expertise en marketing digital impulsa el crecimiento y posicionamiento de
+                CodeQuest.
+              </p>
+              <div class="member-skills">
+                <span class="skill-tag">Marketing Digital</span>
+                <span class="skill-tag">Análisis de Mercado</span>
+                <span class="skill-tag">Creatividad</span>
+                <span class="skill-tag">Branding</span>
+              </div>
+              <div class="member-social">
+                <a href="mailto:josevaleriano@javeriana.edu.co" class="social-link">✉️</a>
+                <a href="#" class="social-link">📈</a>
+                <a href="#" class="social-link">🎯</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-member fade-in">
+            <div class="member-content">
+              <div class="member-avatar">👩‍💼</div>
+              <h3 class="member-name">Carol Fernanda Ríos</h3>
+              <p class="member-role">CFO / Director Financiero</p>
+              <p class="member-description">
+                Gestiona las finanzas corporativas, presupuestos e inversiones de CodeQuest. Su
+                análisis económico estratégico asegura la sostenibilidad y crecimiento financiero de
+                la empresa.
+              </p>
+              <div class="member-skills">
+                <span class="skill-tag">Contabilidad</span>
+                <span class="skill-tag">Finanzas</span>
+                <span class="skill-tag">Análisis Económico</span>
+                <span class="skill-tag">Presupuestos</span>
+              </div>
+              <div class="member-social">
+                <a href="mailto:rios_carolf@javeriana.edu.co" class="social-link">✉️</a>
+                <a href="#" class="social-link">💰</a>
+                <a href="#" class="social-link">📊</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-member fade-in">
+            <div class="member-content">
+              <div class="member-avatar">👩‍🏢</div>
+              <h3 class="member-name">Xiomara Herrera Suárez</h3>
+              <p class="member-role">COO / Director de Operaciones</p>
+              <p class="member-description">
+                Supervisa los procesos internos, logística y recursos humanos. Su enfoque en la
+                eficiencia operativa garantiza que CodeQuest funcione de manera óptima y escalable.
+              </p>
+              <div class="member-skills">
+                <span class="skill-tag">Organización</span>
+                <span class="skill-tag">Eficiencia Operativa</span>
+                <span class="skill-tag">Gestión de Equipos</span>
+                <span class="skill-tag">Procesos</span>
+              </div>
+              <div class="member-social">
+                <a href="mailto:x_herrera@javeriana.edu.co" class="social-link">✉️</a>
+                <a href="#" class="social-link">⚙️</a>
+                <a href="#" class="social-link">👥</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section class="experience-section">
+      <div class="team-container">
+        <div class="section-header fade-in">
+          <h2 class="section-title">Nuestra Experiencia</h2>
+          <p class="section-description">
+            Años de experiencia combinada trabajando en las mejores empresas tecnológicas
+          </p>
+        </div>
+
+        <div class="experience-grid">
+          <div class="experience-card fade-in">
+            <div class="experience-icon">🎓</div>
+            <h3 class="experience-title">Experiencia Educativa</h3>
+            <p class="experience-description">
+              Hemos identificado desde el lado de estudiantes y monitor los problemas de la
+              educación en programación y hemos desarrollado soluciones innovadoras para
+              enfrentarlos.
+            </p>
+            <div class="experience-stat">5+</div>
+            <div class="experience-label">Años Combinados</div>
+          </div>
+
+          <div class="experience-card fade-in">
+            <div class="experience-icon">🏢</div>
+            <h3 class="experience-title">Experiencia</h3>
+            <p class="experience-description">
+              Hemos trabajdo en proyectos que nos ha permitido desarrollar habilidades de liderazgo
+              y colaboración en equipos de trabajo.
+            </p>
+            <div class="experience-stat">50+</div>
+            <div class="experience-label">Proyectos Completados</div>
+          </div>
+
+          <div class="experience-card fade-in">
+            <div class="experience-icon">🚀</div>
+            <h3 class="experience-title">Proyectos Innovadores</h3>
+            <p class="experience-description">
+              Hemos desarrollado aplicaciones web, móviles y sistemas de IA.
+            </p>
+            <div class="experience-stat">50+</div>
+            <div class="experience-label">Proyectos Completados</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MISSION SECTION -->
+    <section class="mission-section">
+      <div class="mission-content fade-in">
+        <h2 class="section-title">Nuestra Misión</h2>
+        <p class="mission-quote">
+          Democratizar la educación en programación y crear una comunidad global de desarrolladores
+          que transformen el mundo con código
+        </p>
+        <p class="mission-description">
+          En CodeQuest creemos que la programación es el superpoder del siglo XXI. Nuestra misión es
+          hacer que este superpoder sea accesible para todos, independientemente de su origen,
+          experiencia previa o ubicación geográfica. Combinamos nuestra pasión por la tecnología con
+          metodologías pedagógicas innovadoras para crear experiencias de aprendizaje que inspiran,
+          desafían y transforman vidas.
+        </p>
+
+        <div class="mission-values">
+          <div class="value-item fade-in">
+            <div class="value-icon">🎯</div>
+            <h3 class="value-title">Excelencia</h3>
+            <p class="value-description">
+              Nos comprometemos a ofrecer contenido de la más alta calidad, actualizado con las
+              últimas tendencias tecnológicas
+            </p>
+          </div>
+
+          <div class="value-item fade-in">
+            <div class="value-icon">🤝</div>
+            <h3 class="value-title">Comunidad</h3>
+            <p class="value-description">
+              Fomentamos un ambiente colaborativo donde todos pueden aprender, enseñar y crecer
+              juntos
+            </p>
+          </div>
+
+          <div class="value-item fade-in">
+            <div class="value-icon">🌟</div>
+            <h3 class="value-title">Innovación</h3>
+            <p class="value-description">
+              Constantemente exploramos nuevas tecnologías y metodologías para mejorar la
+              experiencia de aprendizaje
+            </p>
+          </div>
+
+          <div class="value-item fade-in">
+            <div class="value-icon">💡</div>
+            <h3 class="value-title">Accesibilidad</h3>
+            <p class="value-description">
+              Creemos que la programación debe ser accesible para todos, sin barreras económicas o
+              geográficas
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="invitation-section">
+      <div class="invitation-container">
+        <div class="fade-in">
+          <h2 class="invitation-title">¿Listo para unirte a nuestra comunidad?</h2>
+          <p class="invitation-description">
+            Forma parte de CodeQuest y comienza tu transformación digital hoy mismo. Nuestro equipo
+            está aquí para guiarte en cada paso de tu viaje de aprendizaje.
+          </p>
+          <form action="/contacto" method="get">
+            <button id="codeQuestBtn" class="particles">
+              <span class="btn-icon">🚀</span>
+              <span class="btn-text">¡Comienza tu Aventura CodeQuest!</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <div th:replace="~{fragmentos :: footer}" class="Footer"></div>
+  </body>
+  <script th:src="@{/SCRIPT/nosotros.js}"></script>
+</html>
