@@ -60,4 +60,13 @@ public class LandingPageController {
         return "redirect:/contacto?success=true";
     }
 
+    @GetMapping("nosotros")
+    public String nosotros() {
+        return "nosotros";
+    }
+
+    @GetMapping("codeQuest")
+    public String codeQuest() {
+        return "codeQuest";
+    }
 }
