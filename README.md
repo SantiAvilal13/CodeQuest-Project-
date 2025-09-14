@@ -246,15 +246,10 @@ codequest/
 ### Proceso de Contribución
 1. Fork del repositorio
 2. Crear rama feature (`git checkout -b feature/SIGLASNOMBRE_nueva-caracteristica`)
-3. Commit de cambios (`git commit -am 'Agregar nueva característica'`)
+3. Commit de cambios (`git commit -m 'Agregar nueva característica'`)
 4. Push a la rama (`git push origin feature/SIGLASNOMBRE_nueva-caracteristica`)
-5. Crear Pull Request
+5. Crear Pull Request (Aparece en Github en la rama main a menos que el cambio venga de una rama que ya se hizo pull request de hace menos de una hora)
 
-### Estándares de Código
-- **Java**: Seguir Google Java Style Guide
-- **CSS**: Metodología BEM para clases
-- **JavaScript**: ESLint con configuración estándar
-- **Commits**: Conventional Commits specification
 
 ## 📊 Métricas y KPIs
 
