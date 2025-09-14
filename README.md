@@ -19,9 +19,7 @@
 - [Páginas del Sitio Web](#-páginas-del-sitio-web)
 - [Equipo de Desarrollo](#-equipo-de-desarrollo)
 - [Gamificación](#-gamificación)
-- [API y Endpoints](#-api-y-endpoints)
 - [Contribución](#-contribución)
-- [Roadmap](#-roadmap)
 - [Licencia](#-licencia)
 
 ## 🎯 Descripción del Proyecto
