@@ -66,7 +66,8 @@ CodeQuest es una plataforma educativa integral que combina **aprendizaje adaptat
 - Conversión automática de logros a métricas cuantificables
 - Panel de empleabilidad con conexiones directas
 
-## 🛠 Tecnologías (Sitio Web de Presnetación)
+## 🛠 Tecnologías 
+###(Sitio Web de Preseetación)
 
 ### Backend
 - **Java 21** - Lenguaje principal
