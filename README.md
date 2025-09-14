@@ -117,7 +117,8 @@ http://localhost:8091
 - **Puerto por defecto**: `8091`
 - **Hot reload**: Habilitado con Spring Boot DevTools
 
-## 📁 Estructura del Proyecto (LandingPage)
+## 📁 Estructura del Proyecto 
+### (LandingPage)
 
 ```
 codequest/
