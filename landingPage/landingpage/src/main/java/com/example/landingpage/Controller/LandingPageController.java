@@ -1,5 +1,6 @@
 package com.example.landingpage.Controller;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,10 +11,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.landingpage.Entity.ContactoForm;
+import com.example.landingpage.Utils.EmailService;
 
 @Controller
 @RequestMapping("/")
 public class LandingPageController {
+
+    @Value("${correo.correo}")
+    private String correo;
+
+    @Value("${correo.password}")
+    private String contrasena;
 
     //localhost:8091
     @GetMapping
@@ -44,6 +52,10 @@ public class LandingPageController {
         System.out.println("Nuevo contacto: " + contactoForm);
 
         // TODO: guardar en BD, enviar correo, etc.
+        EmailService emailService = new EmailService(correo, contrasena);
+        // Enviar correo de verificación (lógica simplificada)
+        emailService.enviarCorreo(contactoForm.getCorreo(), "Gracias por contactarnos", "Gracias por contactarnos, en breve nos pondremos en contacto con usted para continuar con el proceso .Gracias. ");
+
         // Redirige con un parámetro de éxito
         return "redirect:/contacto?success=true";
     }
