@@ -1,11 +1,16 @@
 # CodeQuest-Project-
 
 # CodeQuest 🚀
+<div align="center">
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Version](https://img.shields.io/badge/Version-1.0.0-blue.svg)](https://github.com/codequest-team/codequest)
-[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-2.7.0-green.svg)](https://spring.io/projects/spring-boot)
-[![Status](https://img.shields.io/badge/Status-Development-orange.svg)](https://github.com/codequest-team/codequest)
+![CodeQuest Banner](https://img.shields.io/badge/CodeQuest-Transforma%20tu%20aprendizaje-blueviolet?style=for-the-badge&logo=rocket)  
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-ff69b4?style=for-the-badge&logo=open-source-initiative)](https://opensource.org/licenses/MIT)
+[![Version](https://img.shields.io/badge/Version-1.0.0-brightgreen?style=for-the-badge&logo=github)](https://github.com/codequest-team/codequest)
+[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-2.7.0-6DB33F?style=for-the-badge&logo=springboot)](https://spring.io/projects/spring-boot)
+[![Status](https://img.shields.io/badge/Status-Development-orange?style=for-the-badge&logo=githubactions)](https://github.com/codequest-team/codequest)
+
+</div>  
 
 > **Plataforma educativa gamificada que transforma el aprendizaje de programación en oportunidades laborales reales**
 
