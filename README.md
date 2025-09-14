@@ -1,6 +1,8 @@
-# CodeQuest-Project-
-
 # CodeQuest 🚀
+<div align="center">
+  <img src="logo.png" width="250px">
+</div>
+
 <div align="center">
 
 ![CodeQuest Banner](https://img.shields.io/badge/CodeQuest-Transforma%20tu%20aprendizaje-blueviolet?style=for-the-badge&logo=rocket)  
