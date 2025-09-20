@@ -28,11 +28,13 @@
     transform: translateY(-10px);
   }
 }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: 'Inter';
   margin: 0;
@@ -48,6 +50,7 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 #mainContentSection {
   display: flex;
   flex-direction: column;
@@ -56,35 +59,61 @@ body {
   padding: 20px;
   text-align: center;
   height: calc(86vh);
-  /*border: 3px solid blue;*/
 }
+
 #mainContentSection h1 {
   font-size: 3.5rem;
   font-weight: bold;
 }
+
 #mainContentSection p {
   font-size: 1.5rem;
   margin-top: 20px;
   max-width: 600px;
   color: var(--muted-foreground);
 }
+
 #mainContentSection img {
   width: 400px;
   height: 300px;
-
   object-fit: cover;
-  /*
-  clip-path: inset(0px 0px 100px 0px);*/
 }
+
 #mainContentSection img:hover {
   clip-path: inset(0px 0px 0px 0px);
   filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
   filter: brightness(1.1);
   filter: contrast(1.2);
   filter: invert(100%);
-
   transition: all 0.5s ease-in-out;
 }
+
+/* --- BOTÓN FIX --- */
+#mainContentSection form {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+#codeQuestBtn {
+  padding: 14px 28px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--background);
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+#codeQuestBtn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+/* --- CARDS --- */
 .Card {
   background-color: var(--card-background);
   border: 1px solid var(--border);
@@ -98,10 +127,12 @@ body {
   cursor: pointer;
   display: flex;
 }
+
 .Card:hover {
   transform: translateY(-25px);
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
+
 .Card .ImagenCard {
   width: 500px;
   height: 100%;
@@ -110,6 +141,7 @@ body {
   margin-bottom: 15px;
   margin-right: 10px;
 }
+
 .ContenidoCard {
   flex: 1;
   display: flex;
@@ -117,44 +149,48 @@ body {
   justify-content: center;
   z-index: 2;
 }
+
 .TituloCard {
   font-size: 2.3rem;
   font-weight: bold;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
   color: var(--primary);
 }
+
 .SubtituloCard {
   font-size: 1.6rem;
   font-weight: semi-bold;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   color: var(--accent);
   text-align: justify;
   width: 100%;
-  margin-bottom: 20px;
 }
+
 .TextoCard {
   font-size: 1rem;
-
   margin-bottom: 20px;
   text-align: justify;
 }
+
 .TextoCard a {
   color: var(--muted-foreground);
   text-decoration: none;
   font-weight: 600;
   width: 100%;
 }
+
 .TextoCard a:hover {
   color: var(--foreground);
   text-decoration: underline;
   transition: all 0.3s ease-in-out;
 }
+
+/* ----------- IMAGEN ----------- */
 .ImagenContainer {
   width: 100%;
   height: calc(86vh);
   display: flex;
   justify-content: center;
-
   align-items: center;
 }
 
@@ -163,15 +199,13 @@ body {
   height: auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  /* desvanecido vertical*/
   filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
   filter: brightness(1.1);
   filter: contrast(1.2);
-
   animation: FadeIn 1s ease-in-out;
 }
+
 /* -------- Seccion de Ventajas ------*/
-/* Nuevas secciones */
 .features-section {
   width: 100%;
   padding: 80px 20px;
@@ -252,6 +286,7 @@ body {
   line-height: 1.6;
 }
 
+/* ----------- Stats ----------- */
 .stats-section {
   width: 100%;
   padding: 80px 20px;
@@ -299,6 +334,10 @@ body {
     width: 250px;
     height: auto;
   }
+  #codeQuestBtn {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
   .Card {
     flex-direction: column;
     height: auto;
@@ -322,6 +361,9 @@ body {
 
 /* Celulares medianos (400px – 768px) */
 @media (min-width: 401px) and (max-width: 768px) {
+  #mainContentSection {
+    margin-bottom: 20px;
+  }
   #mainContentSection h1 {
     font-size: 2.2rem;
     animation: pulse 3s infinite;
@@ -333,6 +375,10 @@ body {
     width: 300px;
     height: auto;
     animation: float 4s ease-in-out infinite;
+  }
+  #codeQuestBtn {
+    font-size: 1.1rem;
+    padding: 12px 24px;
   }
   .Card {
     flex-direction: column;
@@ -364,6 +410,10 @@ body {
     height: auto;
     animation: float 5s ease-in-out infinite;
   }
+  #codeQuestBtn {
+    font-size: 1.2rem;
+    padding: 14px 28px;
+  }
   .Card {
     flex-direction: row;
     height: auto;
@@ -387,6 +437,10 @@ body {
   #mainContentSection p {
     font-size: 1.4rem;
   }
+  #codeQuestBtn {
+    font-size: 1.3rem;
+    padding: 16px 32px;
+  }
   .Card {
     width: 80%;
     height: 350px;
@@ -398,37 +452,5 @@ body {
   }
   .TituloCard {
     font-size: 2.3rem;
-  }
-}
-
-/* Pantallas grandes y TVs (1441px en adelante) */
-@media (min-width: 1441px) {
-  #mainContentSection h1 {
-    font-size: 4.5rem;
-    animation: pulse 4s infinite;
-  }
-  #mainContentSection p {
-    font-size: 1.8rem;
-  }
-  #mainContentSection img {
-    width: 500px;
-    height: auto;
-    animation: float 5s ease-in-out infinite;
-  }
-  .Card {
-    width: 70%;
-    height: 400px;
-    animation: FadeIn 1.2s ease-in-out;
-  }
-  .Card .ImagenCard {
-    width: 500px;
-    height: 100%;
-    animation: pulse 3s infinite;
-  }
-  .TituloCard {
-    font-size: 2.8rem;
-  }
-  .SubtituloCard {
-    font-size: 1.8rem;
   }
 }

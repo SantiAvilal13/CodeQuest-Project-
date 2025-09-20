@@ -66,6 +66,7 @@
   color: var(--primary);
 }
 #getCodeQuestBtn {
+  opacity: 0;
   background-color: var(--primary);
   color: var(--primary-foreground);
   padding: 0.5rem 1rem;
