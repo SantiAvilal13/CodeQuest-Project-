@@ -284,3 +284,151 @@ body {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
+
+/* ----------- Responsividad ----------- */
+
+/* Pantallas muy pequeñas (celulares pequeños < 400px) */
+@media (max-width: 400px) {
+  #mainContentSection h1 {
+    font-size: 1.8rem;
+  }
+  #mainContentSection p {
+    font-size: 1rem;
+  }
+  #mainContentSection img {
+    width: 250px;
+    height: auto;
+  }
+  .Card {
+    flex-direction: column;
+    height: auto;
+    width: 95%;
+    animation: FadeIn 1s ease-in-out;
+  }
+  .Card .ImagenCard {
+    width: 100%;
+    height: 200px;
+    margin-right: 0;
+    margin-bottom: 15px;
+    animation: float 4s ease-in-out infinite;
+  }
+  .TituloCard {
+    font-size: 1.5rem;
+  }
+  .SubtituloCard {
+    font-size: 1.1rem;
+  }
+}
+
+/* Celulares medianos (400px – 768px) */
+@media (min-width: 401px) and (max-width: 768px) {
+  #mainContentSection h1 {
+    font-size: 2.2rem;
+    animation: pulse 3s infinite;
+  }
+  #mainContentSection p {
+    font-size: 1.2rem;
+  }
+  #mainContentSection img {
+    width: 300px;
+    height: auto;
+    animation: float 4s ease-in-out infinite;
+  }
+  .Card {
+    flex-direction: column;
+    height: auto;
+    width: 90%;
+  }
+  .Card .ImagenCard {
+    width: 100%;
+    height: 220px;
+    margin: 0 0 15px 0;
+    animation: FadeIn 1s ease-in-out;
+  }
+  .TituloCard {
+    font-size: 1.8rem;
+  }
+}
+
+/* Tablets (769px – 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  #mainContentSection h1 {
+    font-size: 2.8rem;
+    animation: FadeIn 1.5s ease-in-out;
+  }
+  #mainContentSection p {
+    font-size: 1.3rem;
+  }
+  #mainContentSection img {
+    width: 350px;
+    height: auto;
+    animation: float 5s ease-in-out infinite;
+  }
+  .Card {
+    flex-direction: row;
+    height: auto;
+    width: 90%;
+  }
+  .Card .ImagenCard {
+    width: 45%;
+    height: auto;
+    animation: pulse 4s infinite;
+  }
+  .TituloCard {
+    font-size: 2rem;
+  }
+}
+
+/* Laptops y PCs (1025px – 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  #mainContentSection h1 {
+    font-size: 3.2rem;
+  }
+  #mainContentSection p {
+    font-size: 1.4rem;
+  }
+  .Card {
+    width: 80%;
+    height: 350px;
+  }
+  .Card .ImagenCard {
+    width: 400px;
+    height: 100%;
+    animation: float 6s ease-in-out infinite;
+  }
+  .TituloCard {
+    font-size: 2.3rem;
+  }
+}
+
+/* Pantallas grandes y TVs (1441px en adelante) */
+@media (min-width: 1441px) {
+  #mainContentSection h1 {
+    font-size: 4.5rem;
+    animation: pulse 4s infinite;
+  }
+  #mainContentSection p {
+    font-size: 1.8rem;
+  }
+  #mainContentSection img {
+    width: 500px;
+    height: auto;
+    animation: float 5s ease-in-out infinite;
+  }
+  .Card {
+    width: 70%;
+    height: 400px;
+    animation: FadeIn 1.2s ease-in-out;
+  }
+  .Card .ImagenCard {
+    width: 500px;
+    height: 100%;
+    animation: pulse 3s infinite;
+  }
+  .TituloCard {
+    font-size: 2.8rem;
+  }
+  .SubtituloCard {
+    font-size: 1.8rem;
+  }
+}
