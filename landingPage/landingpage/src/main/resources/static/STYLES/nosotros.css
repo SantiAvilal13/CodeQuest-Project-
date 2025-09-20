@@ -585,43 +585,183 @@ body {
     transform: translateX(0);
   }
 }
+/* ========================= */
+/* 📱 Responsive Design      */
+/* ========================= */
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
+/* === Tablets y pantallas medianas === */
+@media (max-width: 1024px) {
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 
   .hero-subtitle {
     font-size: 1.2rem;
   }
 
+  .team-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+
   .section-title {
+    font-size: 2.8rem;
+  }
+
+  .mission-quote {
+    font-size: 2rem;
+  }
+
+  .invitation-title {
     font-size: 2.5rem;
+  }
+}
+
+/* === Móviles grandes === */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 60px 15px;
+    min-height: auto;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .section-description {
+    font-size: 1.1rem;
   }
 
   .team-grid {
     grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .member-avatar {
+    width: 90px;
+    height: 90px;
+    font-size: 2rem;
+  }
+
+  .member-name {
+    font-size: 1.4rem;
+  }
+
+  .member-role {
+    font-size: 1rem;
+  }
+
+  .experience-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-title {
+    font-size: 1.5rem;
+  }
+
+  .experience-stat {
+    font-size: 2rem;
   }
 
   .mission-quote {
     font-size: 1.8rem;
   }
 
-  .mission-quote::before,
-  .mission-quote::after {
-    display: none;
+  .mission-description {
+    font-size: 1.1rem;
+  }
+
+  .value-title {
+    font-size: 1.2rem;
+  }
+
+  .invitation-title {
+    font-size: 2rem;
+  }
+
+  .invitation-description {
+    font-size: 1.1rem;
+  }
+
+  .invitation-btn {
+    font-size: 1rem;
+    padding: 12px 25px;
   }
 }
 
-/* ===== SCROLL ANIMATIONS ===== */
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease-out;
-}
+/* === Móviles pequeños (≤480px) === */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
 
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
+  .hero-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .hero-badge {
+    font-size: 0.8rem;
+    padding: 6px 15px;
+  }
+
+  .team-section,
+  .experience-section,
+  .mission-section,
+  .invitation-section {
+    padding: 60px 15px;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .section-description {
+    font-size: 1rem;
+  }
+
+  .member-description {
+    font-size: 0.9rem;
+  }
+
+  .skill-tag {
+    font-size: 0.7rem;
+    padding: 3px 8px;
+  }
+
+  .experience-title {
+    font-size: 1.3rem;
+  }
+
+  .mission-quote {
+    font-size: 1.4rem;
+  }
+
+  .mission-description {
+    font-size: 1rem;
+  }
+
+  .value-description {
+    font-size: 0.9rem;
+  }
+
+  .invitation-title {
+    font-size: 1.6rem;
+  }
+
+  .invitation-description {
+    font-size: 1rem;
+  }
+
+  .invitation-btn {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
 }
