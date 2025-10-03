@@ -170,6 +170,7 @@ body {
   font-size: 1rem;
   margin-bottom: 20px;
   text-align: justify;
+  text-decoration: none;
 }
 
 .TextoCard a {
@@ -181,8 +182,8 @@ body {
 
 .TextoCard a:hover {
   color: var(--foreground);
-  text-decoration: underline;
   transition: all 0.3s ease-in-out;
+  text-decoration: none;
 }
 
 /* ----------- IMAGEN ----------- */
